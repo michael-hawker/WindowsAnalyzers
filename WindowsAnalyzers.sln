@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAppSDK.Analyzers", "Microsoft.WindowsAppSDK.Analyzers\Microsoft.WindowsAppSDK.Analyzers.csproj", "{B7BB6413-BF6D-415F-8B18-D2C36C4F951F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAppSDK.Analyzers.CodeFixes", "Microsoft.WindowsAppSDK.Analyzers.CodeFixes\Microsoft.WindowsAppSDK.Analyzers.CodeFixes.csproj", "{78E8654D-44C1-4D5A-BC8F-4B9ED00B2568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAppSDK.Analyzers.Package", "Microsoft.WindowsAppSDK.Analyzers.Package\Microsoft.WindowsAppSDK.Analyzers.Package.csproj", "{6C7E80DA-7F5D-480A-BA60-D641A17FF638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAppSDK.Analyzers.Test", "Microsoft.WindowsAppSDK.Analyzers.Test\Microsoft.WindowsAppSDK.Analyzers.Test.csproj", "{4F01FDF8-AE03-4A86-B40F-C64E77CDF6D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.WindowsAppSDK.Analyzers.Vsix", "Microsoft.WindowsAppSDK.Analyzers.Vsix\Microsoft.WindowsAppSDK.Analyzers.Vsix.csproj", "{A6F3743A-F590-4063-9E61-FCFD29CF17C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7BB6413-BF6D-415F-8B18-D2C36C4F951F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7BB6413-BF6D-415F-8B18-D2C36C4F951F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7BB6413-BF6D-415F-8B18-D2C36C4F951F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BB6413-BF6D-415F-8B18-D2C36C4F951F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E8654D-44C1-4D5A-BC8F-4B9ED00B2568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E8654D-44C1-4D5A-BC8F-4B9ED00B2568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E8654D-44C1-4D5A-BC8F-4B9ED00B2568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E8654D-44C1-4D5A-BC8F-4B9ED00B2568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C7E80DA-7F5D-480A-BA60-D641A17FF638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C7E80DA-7F5D-480A-BA60-D641A17FF638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C7E80DA-7F5D-480A-BA60-D641A17FF638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C7E80DA-7F5D-480A-BA60-D641A17FF638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F01FDF8-AE03-4A86-B40F-C64E77CDF6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F01FDF8-AE03-4A86-B40F-C64E77CDF6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F01FDF8-AE03-4A86-B40F-C64E77CDF6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F01FDF8-AE03-4A86-B40F-C64E77CDF6D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F3743A-F590-4063-9E61-FCFD29CF17C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F3743A-F590-4063-9E61-FCFD29CF17C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F3743A-F590-4063-9E61-FCFD29CF17C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F3743A-F590-4063-9E61-FCFD29CF17C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A206AB5-51CC-430E-B216-8DF10FEBBFC6}
+	EndGlobalSection
+EndGlobal
