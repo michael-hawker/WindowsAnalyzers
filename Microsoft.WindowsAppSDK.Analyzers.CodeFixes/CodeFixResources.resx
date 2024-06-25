@@ -121,4 +121,8 @@
     <value>Make uppercase</value>
     <comment>The title of the code fix.</comment>
   </data>
+  <data name="DependencyPropertyNameOfFixTitle" xml:space="preserve">
+    <value>Use nameof</value>
+    <comment>The title of the code fix for dependency property nameof usage</comment>
+  </data>
 </root>
