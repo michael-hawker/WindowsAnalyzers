@@ -11,7 +11,7 @@ public class MicrosoftWindowsAppSDKAnalyzersUnitTest
 {
     //No diagnostics expected to show up
     [TestMethod]
-    public async Task TestMethod1()
+    public async Task TestMethodEmpty()
     {
         var test = @"";
 

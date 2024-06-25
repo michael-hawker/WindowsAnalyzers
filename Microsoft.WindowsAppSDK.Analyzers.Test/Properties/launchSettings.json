@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Microsoft.WindowsAppSDK.Analyzers.Test (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Microsoft.WindowsAppSDK.Analyzers.Test (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
