@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -23,4 +23,9 @@
     <EmbeddedResource Update="Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
   </ItemGroup>
 
+  <!-- Give access to the code fixers project for the exported diagnostic ids and properties -->
+  <ItemGroup>
+	<InternalsVisibleTo Include="Microsoft.WindowsAppSDK.Analyzers.CodeFixes" />
+	<InternalsVisibleTo Include="Microsoft.WindowsAppSDK.Analyzers.Test" />
+  </ItemGroup>
 </Project>

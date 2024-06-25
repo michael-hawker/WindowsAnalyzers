@@ -8,16 +8,14 @@ using System.Composition;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using static Microsoft.WindowsAppSDK.Analyzers.DiagnosticDescriptors;
 
 namespace Microsoft.WindowsAppSDK.Analyzers;
 
 [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(DependencyPropertyNameOfAnalyzerCodeFixProvider)), Shared]
 public class DependencyPropertyNameOfAnalyzerCodeFixProvider : CodeFixProvider
 {
-    public sealed override ImmutableArray<string> FixableDiagnosticIds
-    {
-        get { return ImmutableArray.Create(DependencyPropertyNameOfAnalyzer.DiagnosticId); }
-    }
+    public sealed override ImmutableArray<string> FixableDiagnosticIds { get; } = [DependencyPropertyNameOfId];
 
     public sealed override FixAllProvider GetFixAllProvider()
     {

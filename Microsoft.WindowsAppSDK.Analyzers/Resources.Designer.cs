@@ -61,33 +61,6 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type names should be all uppercase..
-        /// </summary>
-        internal static string AnalyzerDescription {
-            get {
-                return ResourceManager.GetString("AnalyzerDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Type name &apos;{0}&apos; contains lowercase letters.
-        /// </summary>
-        internal static string AnalyzerMessageFormat {
-            get {
-                return ResourceManager.GetString("AnalyzerMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Type name contains lowercase letters.
-        /// </summary>
-        internal static string AnalyzerTitle {
-            get {
-                return ResourceManager.GetString("AnalyzerTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reduce magic strings by using nameof and tying directly to the dependency property&apos;s name..
         /// </summary>
         internal static string DependencyPropertyNameOfDescription {

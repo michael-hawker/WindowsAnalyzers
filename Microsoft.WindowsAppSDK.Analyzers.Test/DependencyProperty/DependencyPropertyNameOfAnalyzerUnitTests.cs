@@ -1,8 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Microsoft.WindowsAppSDK.Analyzers.Test.CSharpCodeFixVerifier<
     Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameOfAnalyzer,
     Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameOfAnalyzerCodeFixProvider>;
+using static Microsoft.WindowsAppSDK.Analyzers.DiagnosticDescriptors;
 
 namespace Microsoft.WindowsAppSDK.Analyzers.Test;
 
@@ -91,7 +93,7 @@ public class DependencyPropertyNameOfAnalyzerUnitTests
             }
             """;
 
-        var expected = VerifyCS.Diagnostic("DependencyPropertyNameOfAnalyzer").WithLocation(0).WithArguments("MyProperty");
+        var expected = VerifyCS.Diagnostic(DependencyPropertyNameOfId).WithLocation(0).WithArguments("MyProperty");
         await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
     }
 

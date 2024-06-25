@@ -61,16 +61,7 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Make uppercase.
-        /// </summary>
-        internal static string CodeFixTitle {
-            get {
-                return ResourceManager.GetString("CodeFixTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use nameof.
+        ///   Looks up a localized string similar to Use nameof instead of string.
         /// </summary>
         internal static string DependencyPropertyNameOfFixTitle {
             get {
