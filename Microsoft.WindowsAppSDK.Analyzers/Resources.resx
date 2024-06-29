@@ -127,6 +127,18 @@
   </data>
   <data name="DependencyPropertyNameOfTitle" xml:space="preserve">
     <value>Can use nameof() method to aid in future refactoring and reduce magic strings</value>
-    <comment>The title of the diagnostic.</comment>
+    <comment>The title of the Dependency Property Name Of diagnostic.</comment>
+  </data>
+  <data name="DependencyPropertyOwnerTypeDescription" xml:space="preserve">
+    <value>Dependency Property's owner type parameter needs to match the containing class's name.</value>
+    <comment>Description of the Dependency Property Owner Type Suggestion</comment>
+  </data>
+  <data name="DependencyPropertyOwnerTypeMessageFormat" xml:space="preserve">
+    <value>Dependency Property registration with ownerType parameter '{0}' should match the actual owning type of '{1}'</value>
+    <comment>The format-able message for the diagnostic of the Dependency Property Owner Type Suggestion</comment>
+  </data>
+  <data name="DependencyPropertyOwnerTypeTitle" xml:space="preserve">
+    <value>Dependency Property OwnerType must match containing Type</value>
+    <comment>The title of the Dependency Property Owner Type diagnostic.</comment>
   </data>
 </root>

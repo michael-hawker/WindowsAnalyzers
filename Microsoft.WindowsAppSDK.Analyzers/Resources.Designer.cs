@@ -86,5 +86,32 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
                 return ResourceManager.GetString("DependencyPropertyNameOfTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependency Property&apos;s owner type parameter needs to match the containing class&apos;s name..
+        /// </summary>
+        internal static string DependencyPropertyOwnerTypeDescription {
+            get {
+                return ResourceManager.GetString("DependencyPropertyOwnerTypeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependency Property registration with ownerType parameter &apos;{0}&apos; should match the actual owning type of &apos;{1}&apos;.
+        /// </summary>
+        internal static string DependencyPropertyOwnerTypeMessageFormat {
+            get {
+                return ResourceManager.GetString("DependencyPropertyOwnerTypeMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependency Property OwnerType must match containing Type.
+        /// </summary>
+        internal static string DependencyPropertyOwnerTypeTitle {
+            get {
+                return ResourceManager.GetString("DependencyPropertyOwnerTypeTitle", resourceCulture);
+            }
+        }
     }
 }

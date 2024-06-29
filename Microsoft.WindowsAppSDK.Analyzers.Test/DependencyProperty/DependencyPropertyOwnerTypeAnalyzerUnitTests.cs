@@ -2,14 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Microsoft.WindowsAppSDK.Analyzers.Test.CSharpCodeFixVerifier<
-    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameOfAnalyzer,
-    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameOfAnalyzerCodeFixProvider>;
+    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyOwnerTypeAnalyzer,
+    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyOwnerTypeAnalyzerCodeFixProvider>;
 using static Microsoft.WindowsAppSDK.Analyzers.DiagnosticDescriptors;
 
 namespace Microsoft.WindowsAppSDK.Analyzers.Test;
 
 [TestClass]
-public class DependencyPropertyNameOfAnalyzerUnitTests
+public class DependencyPropertyOwnerTypeAnalyzerUnitTests
 {
     //No diagnostics expected to show up
     [TestMethod]
@@ -22,7 +22,7 @@ public class DependencyPropertyNameOfAnalyzerUnitTests
 
     //No diagnostics expected to show up
     [TestMethod]
-    public async Task TestMethodNameOfCorrect()
+    public async Task TestOwnerTypeCorrect()
     {
         var test =
             """
@@ -49,7 +49,7 @@ public class DependencyPropertyNameOfAnalyzerUnitTests
     }
 
     [TestMethod]
-    public async Task TestMethodNameOfIncorrect()
+    public async Task TestOwnerTypeIncorrect()
     {
         var test =
             """
@@ -68,11 +68,13 @@ public class DependencyPropertyNameOfAnalyzerUnitTests
 
                 // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
                 public static readonly DependencyProperty MyPropertyProperty =
-                    DependencyProperty.Register({|#0:"MyProperty"|}, typeof(int), typeof(MyClass), new PropertyMetadata(0));
+                    DependencyProperty.Register(nameof(MyProperty), typeof(int), typeof({|#0:MyOtherClass|}), new PropertyMetadata(0));
             }
+
+            class MyOtherClass { }
             """;
 
-        var expected = VerifyCS.Diagnostic(DependencyPropertyNameOfId).WithLocation(0).WithArguments("MyProperty");
+        var expected = VerifyCS.Diagnostic(DependencyPropertyOwnerTypeId).WithLocation(0).WithArguments("MyOtherClass", "MyClass");
         await VerifyCS.VerifyAnalyzerAsync(test, expected);
     }
 
@@ -96,8 +98,10 @@ public class DependencyPropertyNameOfAnalyzerUnitTests
 
                 // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
                 public static readonly DependencyProperty MyPropertyProperty =
-                    DependencyProperty.Register({|#0:"MyProperty"|}, typeof(int), typeof(MyClass), new PropertyMetadata(0));
+                    DependencyProperty.Register(nameof(MyProperty), typeof(int), typeof({|#0:MyOtherClass|}), new PropertyMetadata(0));
             }
+
+            class MyOtherClass { }
             """;
 
         var fixtest =
@@ -119,9 +123,14 @@ public class DependencyPropertyNameOfAnalyzerUnitTests
                 public static readonly DependencyProperty MyPropertyProperty =
                     DependencyProperty.Register(nameof(MyProperty), typeof(int), typeof(MyClass), new PropertyMetadata(0));
             }
+
+            class MyOtherClass { }
             """;
 
-        var expected = VerifyCS.Diagnostic(DependencyPropertyNameOfId).WithLocation(0).WithArguments("MyProperty");
+        var expected = VerifyCS.Diagnostic(DependencyPropertyOwnerTypeId).WithLocation(0).WithArguments("MyOtherClass", "MyClass");
         await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
     }
+
+    // TODO: Next analyzer I think is checking for declaration of ____Property DP and seeing if a "____" property exists in class...
+    // Codefixer could maybe just generate the standard/blank property template for DP with that name...?
 }

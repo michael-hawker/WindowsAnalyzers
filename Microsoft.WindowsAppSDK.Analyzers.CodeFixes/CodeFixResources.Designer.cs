@@ -68,5 +68,14 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
                 return ResourceManager.GetString("DependencyPropertyNameOfFixTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use matching ownerType.
+        /// </summary>
+        internal static string DependencyPropertyOwnerTypeFixTitle {
+            get {
+                return ResourceManager.GetString("DependencyPropertyOwnerTypeFixTitle", resourceCulture);
+            }
+        }
     }
 }

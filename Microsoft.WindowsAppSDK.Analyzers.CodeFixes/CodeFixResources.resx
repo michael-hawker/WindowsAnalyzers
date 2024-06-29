@@ -121,4 +121,8 @@
     <value>Use nameof instead of string</value>
     <comment>The title of the code fix for dependency property nameof usage</comment>
   </data>
+  <data name="DependencyPropertyOwnerTypeFixTitle" xml:space="preserve">
+    <value>Use matching ownerType</value>
+    <comment>The title of the code fix for dependnecy property ownerType usage</comment>
+  </data>
 </root>
