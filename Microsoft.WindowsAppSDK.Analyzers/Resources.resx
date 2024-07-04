@@ -141,4 +141,16 @@
     <value>Dependency Property OwnerType must match containing Type</value>
     <comment>The title of the Dependency Property Owner Type diagnostic.</comment>
   </data>
+  <data name="DependencyPropertyNameEndsWithPropertyDescription" xml:space="preserve">
+    <value>Dependency Property's identifier must end with the suffix 'Property'.</value>
+    <comment>Description of the Dependency Property Name Ends with Property Suggestion</comment>
+  </data>
+  <data name="DependencyPropertyNameEndsWithPropertyMessageFormat" xml:space="preserve">
+    <value>Dependency Property identifier '{0}' must end with 'Property'</value>
+    <comment>The format-able message for the diagnostic of the Dependency Property Name Ends with Property Suggestion</comment>
+  </data>
+  <data name="DependencyPropertyNameEndsWithPropertyTitle" xml:space="preserve">
+    <value>Dependency Property's identifier must end with the suffix 'Property'</value>
+    <comment>The title of the Dependency Property Name Ends with Property diagnostic.</comment>
+  </data>
 </root>

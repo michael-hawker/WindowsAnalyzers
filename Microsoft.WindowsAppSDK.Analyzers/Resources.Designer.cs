@@ -61,6 +61,33 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dependency Property&apos;s identifier must end with the suffix &apos;Property&apos;..
+        /// </summary>
+        internal static string DependencyPropertyNameEndsWithPropertyDescription {
+            get {
+                return ResourceManager.GetString("DependencyPropertyNameEndsWithPropertyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependency Property identifier &apos;{0}&apos; must end with &apos;Property&apos;.
+        /// </summary>
+        internal static string DependencyPropertyNameEndsWithPropertyMessageFormat {
+            get {
+                return ResourceManager.GetString("DependencyPropertyNameEndsWithPropertyMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependency Property&apos;s identifier must end with the suffix &apos;Property&apos;.
+        /// </summary>
+        internal static string DependencyPropertyNameEndsWithPropertyTitle {
+            get {
+                return ResourceManager.GetString("DependencyPropertyNameEndsWithPropertyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reduce magic strings by using nameof and tying directly to the dependency property&apos;s name..
         /// </summary>
         internal static string DependencyPropertyNameOfDescription {

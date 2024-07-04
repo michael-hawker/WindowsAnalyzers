@@ -12,8 +12,9 @@ partial class DiagnosticDescriptors
     // You can change these strings in the Resources.resx file. If you do not want your analyzer to be localize-able, you can use regular strings for Title and MessageFormat.
     // See https://github.com/dotnet/roslyn/blob/main/docs/analyzers/Localizing%20Analyzers.md for more on localization
 
-    public const string DependencyPropertyNameOfId =        "WASDKWUI0001";
-    public const string DependencyPropertyOwnerTypeId =     "WASDKWUI0002";
+    public const string DependencyPropertyNameOfId =                "WASDKWUI0001";
+    public const string DependencyPropertyOwnerTypeId =             "WASDKWUI0002";
+    public const string DependencyPropertyNameEndsWithPropertyId =  "WASDKWUI0003";
 
     /// <summary>
     /// Gets a <see cref="DiagnosticDescriptor"/> for a suggestion to change the literal parameter for a DependencyProperty property to use <c>nameof</c> instead.
@@ -31,7 +32,7 @@ partial class DiagnosticDescriptors
         description: new LocalizableResourceString(nameof(Resources.DependencyPropertyNameOfDescription), Resources.ResourceManager, typeof(Resources)));
 
     /// <summary>
-    /// Gets a <see cref="DiagnosticDescriptor"/> for a suggestion to change the owner type parameter for a DependencyProperty property to match the container class.
+    /// Gets a <see cref="DiagnosticDescriptor"/> for the need to change the owner type parameter for a DependencyProperty property to match the container class.
     /// <para>
     /// Format: <c>Dependency Property registration with ownerType parameter '{0}' should match the actual owning type of '{1}'</c>
     /// </para>
@@ -44,4 +45,20 @@ partial class DiagnosticDescriptors
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true,
         description: new LocalizableResourceString(nameof(Resources.DependencyPropertyOwnerTypeDescription), Resources.ResourceManager, typeof(Resources)));
+
+    /// <summary>
+    /// Gets a <see cref="DiagnosticDescriptor"/> for the need for Dependency Properties to end their identifier with the word 'Property'.
+    /// <para>
+    /// Format: <c>Dependency Property identifier '{0}' must end with 'Property'</c>
+    /// </para>
+    /// <seealso href="https://learn.microsoft.com/windows/uwp/xaml-platform/custom-dependency-properties#dependency-property-name-conventions"/>Dependency Property Naming Conventions</seealso>
+    /// </summary>
+    public static readonly DiagnosticDescriptor DependencyPropertyNameEndsWithProperty = new(
+        id: DependencyPropertyNameEndsWithPropertyId,
+        title: new LocalizableResourceString(nameof(Resources.DependencyPropertyNameEndsWithPropertyTitle), Resources.ResourceManager, typeof(Resources)),
+        messageFormat: new LocalizableResourceString(nameof(Resources.DependencyPropertyNameEndsWithPropertyMessageFormat), Resources.ResourceManager, typeof(Resources)),
+        category: WindowsAppSDKWinUICategory,
+        defaultSeverity: DiagnosticSeverity.Error,
+        isEnabledByDefault: true,
+        description: new LocalizableResourceString(nameof(Resources.DependencyPropertyNameEndsWithPropertyDescription), Resources.ResourceManager, typeof(Resources)));
 }
