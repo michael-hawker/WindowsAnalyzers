@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DependencyPropertyNameEndsWithPropertyTitle" xml:space="preserve">
+    <value>Add 'Property' suffix  to identifier</value>
+    <comment>The title of the code fix for the dependency property NameEndsWithProperty usage</comment>
+  </data>
   <data name="DependencyPropertyNameOfFixTitle" xml:space="preserve">
     <value>Use nameof instead of string</value>
     <comment>The title of the code fix for dependency property nameof usage</comment>

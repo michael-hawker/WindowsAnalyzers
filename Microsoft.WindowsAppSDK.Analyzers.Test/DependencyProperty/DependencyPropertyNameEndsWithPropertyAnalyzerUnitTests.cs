@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Microsoft.WindowsAppSDK.Analyzers.Test.CSharpCodeFixVerifier<
     Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameEndsWithPropertyAnalyzer,
-    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameOfAnalyzerCodeFixProvider>; // TODO:
+    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameEndsWithPropertyAnalyzerCodeFixProvider>;
 using static Microsoft.WindowsAppSDK.Analyzers.DiagnosticDescriptors;
 
 namespace Microsoft.WindowsAppSDK.Analyzers.Test;

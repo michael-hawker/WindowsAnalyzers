@@ -61,6 +61,15 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add &apos;Property&apos; suffix  to identifier.
+        /// </summary>
+        internal static string DependencyPropertyNameEndsWithPropertyTitle {
+            get {
+                return ResourceManager.GetString("DependencyPropertyNameEndsWithPropertyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use nameof instead of string.
         /// </summary>
         internal static string DependencyPropertyNameOfFixTitle {
