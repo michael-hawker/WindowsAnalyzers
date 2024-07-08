@@ -153,4 +153,16 @@
     <value>Dependency Property's identifier must end with the suffix 'Property'</value>
     <comment>The title of the Dependency Property Name Ends with Property diagnostic.</comment>
   </data>
+  <data name="DependencyPropertyMatchingPropertyNameDescription" xml:space="preserve">
+    <value>Dependency Property's expect a matching property to be declared that is the Dependency Property's identifier without the 'Property' suffix.</value>
+    <comment>Description of the Dependency Property Matching Property Exists Suggestion</comment>
+  </data>
+  <data name="DependencyPropertyMatchingPropertyNameMessageFormat" xml:space="preserve">
+    <value>Dependency Property registration of '{0}' requires a property named '{1}' to exist</value>
+    <comment>The format-able message for the diagnostic of the Dependency Property Matching Property Exists Suggestion</comment>
+  </data>
+  <data name="DependencyPropertyMatchingPropertyNameTitle" xml:space="preserve">
+    <value>Dependency Property requires property without 'Property' suffix</value>
+    <comment>The title of the Dependency Property Matching Property Exists diagnostic.</comment>
+  </data>
 </root>

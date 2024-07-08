@@ -15,6 +15,7 @@ partial class DiagnosticDescriptors
     public const string DependencyPropertyNameOfId =                "WASDKWUI0001";
     public const string DependencyPropertyOwnerTypeId =             "WASDKWUI0002";
     public const string DependencyPropertyNameEndsWithPropertyId =  "WASDKWUI0003";
+    public const string DependencyPropertyMatchingPropertyNameId =  "WASDKWUI0004";
 
     /// <summary>
     /// Gets a <see cref="DiagnosticDescriptor"/> for a suggestion to change the literal parameter for a DependencyProperty property to use <c>nameof</c> instead.
@@ -61,4 +62,19 @@ partial class DiagnosticDescriptors
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true,
         description: new LocalizableResourceString(nameof(Resources.DependencyPropertyNameEndsWithPropertyDescription), Resources.ResourceManager, typeof(Resources)));
+
+    /// <summary>
+    /// Gets a <see cref="DiagnosticDescriptor"/> for the need to have a corresponding property named the same as the Dependency Property identifier without the 'Property' sufficx.
+    /// <para>
+    /// Format: <c>Dependency Property registration of '{0}' requires a property named '{1}' to exist</c>
+    /// </para>
+    /// </summary>
+    public static readonly DiagnosticDescriptor DependencyPropertyMatchingPropertyName = new(
+        id: DependencyPropertyMatchingPropertyNameId,
+        title: new LocalizableResourceString(nameof(Resources.DependencyPropertyMatchingPropertyNameTitle), Resources.ResourceManager, typeof(Resources)),
+        messageFormat: new LocalizableResourceString(nameof(Resources.DependencyPropertyMatchingPropertyNameMessageFormat), Resources.ResourceManager, typeof(Resources)),
+        category: WindowsAppSDKWinUICategory,
+        defaultSeverity: DiagnosticSeverity.Error,
+        isEnabledByDefault: true,
+        description: new LocalizableResourceString(nameof(Resources.DependencyPropertyMatchingPropertyNameDescription), Resources.ResourceManager, typeof(Resources)));
 }

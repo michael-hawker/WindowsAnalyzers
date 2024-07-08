@@ -61,6 +61,33 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dependency Property&apos;s expect a matching property to be declared that is the Dependency Property&apos;s identifier without the &apos;Property&apos; suffix..
+        /// </summary>
+        internal static string DependencyPropertyMatchingPropertyNameDescription {
+            get {
+                return ResourceManager.GetString("DependencyPropertyMatchingPropertyNameDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependency Property registration of &apos;{0}&apos; requires a property named &apos;{1}&apos; to exist.
+        /// </summary>
+        internal static string DependencyPropertyMatchingPropertyNameMessageFormat {
+            get {
+                return ResourceManager.GetString("DependencyPropertyMatchingPropertyNameMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dependency Property requires property without &apos;Property&apos; suffix.
+        /// </summary>
+        internal static string DependencyPropertyMatchingPropertyNameTitle {
+            get {
+                return ResourceManager.GetString("DependencyPropertyMatchingPropertyNameTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dependency Property&apos;s identifier must end with the suffix &apos;Property&apos;..
         /// </summary>
         internal static string DependencyPropertyNameEndsWithPropertyDescription {
