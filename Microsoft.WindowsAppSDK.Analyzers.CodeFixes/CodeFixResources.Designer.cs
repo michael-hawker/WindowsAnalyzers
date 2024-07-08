@@ -61,6 +61,15 @@ namespace Microsoft.WindowsAppSDK.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add backing Property.
+        /// </summary>
+        internal static string DependencyPropertyMatchingPropertyNameTitle {
+            get {
+                return ResourceManager.GetString("DependencyPropertyMatchingPropertyNameTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add &apos;Property&apos; suffix  to identifier.
         /// </summary>
         internal static string DependencyPropertyNameEndsWithPropertyTitle {

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using static Microsoft.WindowsAppSDK.Analyzers.DiagnosticDescriptors;
 using VerifyCS = Microsoft.WindowsAppSDK.Analyzers.Test.CSharpCodeFixVerifier<
     Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyMatchingPropertyNameAnalyzer,
-    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyNameOfAnalyzerCodeFixProvider>; // TODO:
+    Microsoft.WindowsAppSDK.Analyzers.DependencyPropertyMatchingPropertyNameAnalyzerCodeFixProvider>;
 
 namespace Microsoft.WindowsAppSDK.Analyzers.Test;
 
@@ -96,6 +96,49 @@ public class DependencyPropertyMatchingPropertyNameUnitTests
 
         var expected = VerifyCS.Diagnostic(DependencyPropertyMatchingPropertyNameId).WithLocation(0).WithArguments("FooBarProperty", "FooBar");
         await VerifyCS.VerifyAnalyzerAsync(test, expected);
+    }
+
+    [TestMethod]
+    public async Task TestMatchingPropertyAddedFix()
+    {
+        var test =
+            """
+            using System;
+            using Microsoft.UI.Xaml;
+            
+            namespace TestApplication;
+            
+            class MyClass : DependencyObject
+            {
+                // Using a DependencyProperty as the backing store for FooBar.  This enables animation, styling, binding, etc...
+                public static readonly DependencyProperty {|#0:FooBarProperty|} =
+                    DependencyProperty.Register("FooBarProperty", typeof(float), typeof(MyClass), new PropertyMetadata(0));
+            }
+            """;
+
+        var fixtest =
+            """
+            using System;
+            using Microsoft.UI.Xaml;
+            
+            namespace TestApplication;
+
+            class MyClass : DependencyObject
+            {
+                public float FooBar
+                {
+                    get { return (float)GetValue(FooBarProperty); }
+                    set { SetValue(FooBarProperty, value); }
+                }            
+                
+                // Using a DependencyProperty as the backing store for FooBar.  This enables animation, styling, binding, etc...
+                public static readonly DependencyProperty FooBarProperty =
+                    DependencyProperty.Register("FooBarProperty", typeof(float), typeof(MyClass), new PropertyMetadata(0));
+            }
+            """;
+
+        var expected = VerifyCS.Diagnostic(DependencyPropertyMatchingPropertyNameId).WithLocation(0).WithArguments("FooBarProperty", "FooBar");
+        await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
     }
 
     // TODO: Create analyzers which check for GetValue/SetValue within the property are gettting/setting the correct DependencyProperty value...
