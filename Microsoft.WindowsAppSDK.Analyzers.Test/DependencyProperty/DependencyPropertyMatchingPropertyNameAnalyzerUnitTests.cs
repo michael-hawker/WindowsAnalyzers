@@ -116,6 +116,7 @@ public class DependencyPropertyMatchingPropertyNameUnitTests
             }
             """;
 
+        // TODO: Ideally our analyzer can add to the top of the class and have compact blocks like the default template?
         var fixtest =
             """
             using System;
@@ -125,15 +126,22 @@ public class DependencyPropertyMatchingPropertyNameUnitTests
 
             class MyClass : DependencyObject
             {
-                public float FooBar
-                {
-                    get { return (float)GetValue(FooBarProperty); }
-                    set { SetValue(FooBarProperty, value); }
-                }            
-                
                 // Using a DependencyProperty as the backing store for FooBar.  This enables animation, styling, binding, etc...
                 public static readonly DependencyProperty FooBarProperty =
                     DependencyProperty.Register("FooBarProperty", typeof(float), typeof(MyClass), new PropertyMetadata(0));
+
+                public float FooBar
+                {
+                    get
+                    {
+                        return (float)GetValue(FooBarProperty);
+                    }
+
+                    set
+                    {
+                        SetValue(FooBarProperty, value);
+                    }
+                }
             }
             """;
 
